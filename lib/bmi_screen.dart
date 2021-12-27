@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:bmi_calculator/results_screen.dart';
 import 'package:flutter/material.dart';
 
 class BmiScreen extends StatefulWidget {
@@ -299,18 +300,18 @@ class _BmiScreenState extends State<BmiScreen> {
                       color: Colors.white),
                 ),
                 onPressed: () {
-                  // double result = weight / pow(height / 100, 2);
+                  double result = weight / pow(height / 100, 2);
 
-                  // Navigator.push(
-                  //   context,
-                  //   MaterialPageRoute(
-                  //     builder: (context) =>
-                  //         ResultsScreen(
-                  //           result: result.round(),
-                  //           isMale: isMale,
-                  //         ),
-                  //   ),
-                  // );
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          ResultsScreen(
+                            result: result.round(),
+                            isMale: isMale,
+                          ),
+                    ),
+                  );
                 }),
           )
         ],
